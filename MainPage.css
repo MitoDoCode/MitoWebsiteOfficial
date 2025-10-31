@@ -10,7 +10,6 @@ body {
     background-image: url("Images/Pictures/mikubg.png");
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: scroll;
     background-position: center;
     color: #222;
     text-align: center;
@@ -76,9 +75,10 @@ header {
 
 /* ===== ROULETTE ===== */
 .Roullete {
+    position: relative;
+    width: 90%;
     height: 350px;
     margin: 2em auto;
-    width: 90%;
     border: 4px solid salmon;
     overflow: hidden;
     border-radius: 12px;
@@ -89,33 +89,30 @@ header {
 
 .Track {
     display: flex;
-    width: max-content;
     animation: scroll 10s linear infinite;
-    gap: 1rem;
+    height: 100%;
+    width: max-content;
 }
 
 .Groups {
     display: flex;
-    gap: 1rem;
+    height: 100%;
 }
 
 .Pics {
-    width: 250px;
-    height: 250px;
+    flex: 0 0 auto;
+    height: 100%;
+    aspect-ratio: 1 / 1;
     border-radius: 12px;
     overflow: hidden;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .Pics img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* <— the fix */
-    border-radius: 12px;
+    object-fit: cover;
     display: block;
+    border-radius: 12px;
 }
 
 @keyframes scroll {
@@ -174,7 +171,7 @@ footer {
     font-weight: bold;
 }
 
-
+/* ===== MOBILE VIEW ===== */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -193,17 +190,9 @@ footer {
         width: 95%;
     }
 
-    .Track {
-        gap: 0.5rem;
-    }
-
     .Pics {
-        width: 150px;
-        height: 150px;
-    }
-
-    .Pics img {
-        border-radius: 8px;
+        height: 100%;
+        aspect-ratio: 1 / 1;
     }
 
     #Slider {
@@ -220,7 +209,7 @@ footer {
     }
 }
 
-
+/* ===== LAPTOP VIEW ===== */
 @media (min-width: 1024px) {
     header {
         padding: 1.5em 3em;
@@ -236,8 +225,7 @@ footer {
     }
 
     .Pics {
-        width: 300px;
-        height: 300px;
+        height: 100%;
     }
 
     #Slider {
