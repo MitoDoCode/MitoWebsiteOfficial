@@ -1,0 +1,220 @@
+/* ========== WHOLE_BG ========== */
+* {
+    body {
+        
+        background-image: url("Images/Pictures/mikubg.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center;
+        box-sizing: border-box;
+    }
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: salmon;
+        font-weight: bold;
+        gap: 6px;
+        /* adds space between icon and text */
+    }
+
+    a .icon {
+        width: 20px;
+        /* smaller size */
+        height: 20px;
+        object-fit: contain;
+        /* keeps proportions */
+    }
+
+}
+
+body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-family: 'League Spartan', sans-serif;
+    background-color: #fff;
+}
+
+/* ========== HEADER ========== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background: #fce4ec;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.left-header {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+#MitoProfile {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+#Contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* centers horizontally */
+    text-align: center;
+    margin-left: auto;
+    /* keeps it on the right side of header */
+}
+
+#Contacts h2 {
+    margin-bottom: 0.5em;
+}
+
+#Contacts nav {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    /* centers icons in a row */
+    flex-wrap: wrap;
+    /* makes it responsive */
+}
+
+#Contacts nav a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    gap: 6px;
+}
+
+#Contacts nav a:hover {
+    color: salmon;
+}
+
+#Contacts .icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.WivesText {
+    align-items: center;
+    align-self: auto center;
+}
+
+/* ========== HEADER ========== */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #Contacts {
+        text-align: left;
+        width: 100%;
+    }
+
+    #Contacts nav {
+        justify-content: flex-start;
+    }
+}
+
+/* ========== ROULETTE ========== */
+.Roullete {
+    height: 500px;
+    margin: 1em auto;
+    width: 95%;
+    border: 5px solid salmon;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.Track {
+    display: flex;
+    width: max-content;
+    animation: scroll 10s linear infinite;
+    will-change: transform;
+}
+
+.Groups {
+    display: flex;
+    gap: 1em;
+    padding-right: 1em;
+}
+
+.Pics {
+    flex: 0 0 10em;
+    height: 6em;
+    border-radius: 0.3em;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+@keyframes scroll {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+
+
+/* ========== GACHA SLIDER ========== */
+#Slider {
+    margin: 3em auto;
+    width: 90%;
+    max-width: 1000px;
+    height: 400px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    border-radius: 1em;
+    border: 3px solid salmon;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+#Slider::-webkit-scrollbar {
+    display: none;
+}
+
+#Slider figure {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#Slider figure img {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+
+
+/* ========== FOOTER ========== */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fce4ec;
+    padding: 1em;
+    text-align: center;
+}
