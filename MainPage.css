@@ -81,25 +81,41 @@ header {
     width: 90%;
     border: 4px solid salmon;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .Track {
     display: flex;
     width: max-content;
     animation: scroll 10s linear infinite;
+    gap: 1rem;
 }
 
 .Groups {
     display: flex;
-    gap: 1em;
+    gap: 1rem;
+}
+
+.Pics {
+    width: 250px;
+    height: 250px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .Pics img {
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
-    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* <— the fix */
+    border-radius: 12px;
+    display: block;
 }
 
 @keyframes scroll {
@@ -177,9 +193,17 @@ footer {
         width: 95%;
     }
 
+    .Track {
+        gap: 0.5rem;
+    }
+
+    .Pics {
+        width: 150px;
+        height: 150px;
+    }
+
     .Pics img {
-        width: 130px;
-        height: 130px;
+        border-radius: 8px;
     }
 
     #Slider {
@@ -188,7 +212,6 @@ footer {
     }
 
     #Slider figure img {
-        flex: 0 0 100%;
         height: 250px;
     }
 
@@ -209,11 +232,12 @@ footer {
 
     .Roullete {
         height: 450px;
+        width: 85%;
     }
 
-    .Pics img {
-        width: 250px;
-        height: 250px;
+    .Pics {
+        width: 300px;
+        height: 300px;
     }
 
     #Slider {
