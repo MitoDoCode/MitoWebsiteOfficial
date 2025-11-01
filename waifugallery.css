@@ -1,0 +1,208 @@
+/* ===== GLOBAL BACKGROUND ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#waifustxt{
+    color: white;
+    font-family: 'League Spartan', sans-serif;
+}
+
+body{
+    font-family: 'League Spartan', sans-serif;
+    background-image: url("Images/Pictures/mikubg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: black;
+    text-align: center;
+}
+
+
+
+/* ===== HEADER ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background: #fce4ec;
+    flex-wrap: wrap;
+}
+
+.left-header {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+#MitoProfile {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+#Contacts {
+    text-align: center;
+}
+
+#Contacts h2 {
+    margin-bottom: 0.4em;
+}
+
+#Contacts nav {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+#Contacts a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    gap: 6px;
+    transition: color 0.3s ease;
+}
+
+#Contacts a:hover {
+    color: salmon;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+#Text{
+    color: salmon;
+}
+
+/* ===== Picture Frames ===== */
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.Frames {
+    position: relative;
+    margin: 10px;
+    overflow: hidden;
+    border: 2px solid salmon;
+    box-shadow: 5px 8px 8px 0px black;
+}
+
+.Frames img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    transition: filter 0.4s ease, transform 0.4s ease;
+    cursor: pointer;
+    object-fit: cover;
+    object-position: top;
+}
+
+.Frames .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: salmon;
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 0 0 10px black;
+    opacity: 0;
+    transition: opacity 0.4s ease 0.2s;
+    pointer-events: none;
+}
+
+.Frames:hover img {
+    filter: blur(5px);
+    transform: scale(1.05);
+}
+
+.Frames:hover .text {
+    opacity: 1;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fce4ec;
+    padding: 1em;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* ===== MOBILE VIEW ===== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1em;
+    }
+
+    #Contacts nav {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .Roullete {
+        height: 250px;
+        width: 95%;
+    }
+
+    .Pics {
+        height: 100%;
+        aspect-ratio: 1 / 1;
+    }
+
+    #Slider {
+        height: 250px;
+        width: 95%;
+    }
+
+    #Slider figure img {
+        height: 250px;
+    }
+
+    h1, h2 {
+        font-size: 1.3em;
+    }
+}
+
+/* ===== LAPTOP VIEW ===== */
+@media (min-width: 1024px) {
+    header {
+        padding: 1.5em 3em;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .Roullete {
+        height: 450px;
+        width: 85%;
+    }
+
+    .Pics {
+        height: 100%;
+    }
+
+    #Slider {
+        height: 400px;
+    }
+}
+2
