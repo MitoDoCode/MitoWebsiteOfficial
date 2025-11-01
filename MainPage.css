@@ -1,3 +1,4 @@
+
 /* ===== GLOBAL BACKGROUND ===== */
 * {
     box-sizing: border-box;
@@ -71,6 +72,10 @@ header {
     width: 20px;
     height: 20px;
     object-fit: contain;
+}
+
+#Text{
+    color: salmon;
 }
 
 /* ===== ROULETTE ===== */
