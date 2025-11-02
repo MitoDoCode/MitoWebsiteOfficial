@@ -85,14 +85,6 @@ header {
 }
 
 /* ===== ROULETTE ===== */
-body {
-    background: #111;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
 .slider {
     position: relative;
     width: 80%;
