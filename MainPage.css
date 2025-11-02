@@ -120,6 +120,10 @@ header {
     border-radius: 12px;
 }
 
+.Roullete:hover .Track {
+    animation-play-state: paused;
+}
+
 @keyframes scroll {
     from {
         transform: translateX(0);
