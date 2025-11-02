@@ -210,20 +210,11 @@ footer {
 
 /* ===== MOBILE VIEW ===== */
 @media (max-width: 768px) {
-
     header {
         flex-direction: column;
         align-items: center;
         text-align: center;
         padding: 1em;
-        gap: 0.5em;
-        width: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-        background: #fce4ec;
-        border-bottom: 2px solid salmon;
     }
 
     #Contacts nav {
@@ -231,55 +222,27 @@ footer {
         gap: 0.5em;
     }
 
-    body {
-        padding-top: 190px; 
-        padding-bottom: 100px; 
-    }
-
-
-    .Roullete, .slider {
+    .Roullete {
+        height: 250px;
         width: 95%;
-        height: clamp(180px, 35vh, 250px);
-        margin: 1em auto;
     }
 
-    .Pics, .item img {
-        width: 100%;
+    .Pics {
         height: 100%;
-        object-fit: cover;
-        border-radius: 10px;
+        aspect-ratio: 1 / 1;
     }
-
 
     #Slider {
+        height: 250px;
         width: 95%;
-        height: clamp(180px, 35vh, 250px);
-        margin: 1em auto;
     }
 
     #Slider figure img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
+        height: 250px;
     }
-
 
     h1,
     h2 {
         font-size: 1.3em;
-    }
-
-
-    footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background: #fce4ec;
-        padding: 0.8em;
-        text-align: center;
-        font-size: 0.9em;
-        border-top: 2px solid salmon;
-        z-index: 1000;
     }
 }
