@@ -44,7 +44,7 @@ header {
     width: 100%;
     padding: 1em 2em;
     background: #fce4ec;
-    position: fixed;        /* stay at top */
+    position: fixed;        
     top: 0;
     left: 0;
     z-index: 1000;
@@ -210,39 +210,68 @@ footer {
 
 /* ===== MOBILE VIEW ===== */
 @media (max-width: 768px) {
+
     header {
         flex-direction: column;
         align-items: center;
         text-align: center;
         padding: 1em;
+        gap: 0.5em;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        background: #fce4ec;
+        border-bottom: 2px solid salmon;
     }
 
     #Contacts nav {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 0.5em;
     }
 
-    .Roullete {
-        height: 250px;
-        width: 95%;
+
+    body {
+        padding-top: 150px;
+        padding-bottom: 80px;
     }
 
-    .Pics {
-        height: 100%;
-        aspect-ratio: 1 / 1;
-    }
-
+    .Roullete,
+    .slider,
     #Slider {
-        height: 250px;
-        width: 95%;
+        width: 90%;
+        height: clamp(150px, 30vh, 220px);
+        margin: 1em auto;
     }
 
+    .Pics,
+    .item img,
     #Slider figure img {
-        height: 250px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
     }
+
 
     h1,
     h2 {
-        font-size: 1.3em;
+        font-size: 1.2em;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #fce4ec;
+        padding: 0.6em;
+        text-align: center;
+        font-size: 0.85em;
+        border-top: 2px solid salmon;
+        z-index: 1000;
     }
 }
