@@ -13,6 +13,11 @@
     padding: 0;
 }
 
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
 body {
     font-family: 'League Spartan', sans-serif;
     background-image: url("Images/Pictures/mikubg.png");
@@ -22,26 +27,30 @@ body {
     color: #222;
     text-align: center;
 
-    
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+
+    min-height: 100vh;
+    padding-top: 130px; 
+    padding-bottom: 70px; 
 }
 
 /* ===== HEADER ===== */
 header {
-    width: 100%;
-    max-width: 1000px;
-    background: #fce4ec;
-    padding: 1em 2em;
-    border-radius: 1em;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2em;
+    width: 100%;
+    padding: 1em 2em;
+    background: #fce4ec;
+    position: fixed;        /* stay at top */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: auto;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .left-header {
@@ -51,8 +60,8 @@ header {
 }
 
 #MitoProfile {
-    width: clamp(50px, 8vw, 80px);
-    height: clamp(50px, 8vw, 80px);
+    width: 70px;
+    height: 70px;
     border-radius: 10px;
     object-fit: cover;
 }
@@ -92,15 +101,7 @@ header {
     object-fit: contain;
 }
 
-#Text {
-    color: salmon;
-    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
-    margin-bottom: 1em;
-}
-
 /* ===== WAIFU WHEEL ===== */
-
-/* ===== Salute to this legend doin it https://www.youtube.com/watch?v=mF9yOwlunWk ===== */
 .slider {
     position: relative;
     width: 80%;
@@ -151,6 +152,7 @@ header {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(calc((var(--width) + var(--gap)) * var(--quantity) * -1));
     }
@@ -198,23 +200,31 @@ footer {
     padding: 1em;
     text-align: center;
     font-weight: bold;
-    border-radius: 0.5em;
     width: 100%;
-    max-width: 800px;
-    margin-top: 2em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-top: 2px solid salmon;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* ===== MOBILE VIEW ===== */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        align-items: center;
         text-align: center;
+        padding: 1em;
+        gap: 0.5em;
     }
 
     #Contacts nav {
         flex-direction: column;
-        gap: 0.5em;
+        gap: 0.4em;
+    }
+
+    body {
+        padding-top: 160px;
+        padding-bottom: 90px;
     }
 
     .slider {
