@@ -1,11 +1,12 @@
 :root {
-    --width: 150px;
-    --height: 100px;
-    --gap: 20px;
+    --width: clamp(100px, 10vw, 150px);
+    --height: clamp(80px, 10vh, 120px);
+    --gap: 1.5vw;
     --quantity: 10;
     --speed: 15s;
 }
-/* ===== GLOBAL BACKGROUND ===== */
+
+/* ===== GLOBAL ===== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -20,16 +21,27 @@ body {
     background-position: center;
     color: #222;
     text-align: center;
+
+    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* ===== HEADER ===== */
 header {
+    width: 100%;
+    max-width: 1000px;
+    background: #fce4ec;
+    padding: 1em 2em;
+    border-radius: 1em;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 1em 2em;
-    background: #fce4ec;
-    flex-wrap: wrap;
+    margin-bottom: 2em;
 }
 
 .left-header {
@@ -39,8 +51,8 @@ header {
 }
 
 #MitoProfile {
-    width: 70px;
-    height: 70px;
+    width: clamp(50px, 8vw, 80px);
+    height: clamp(50px, 8vw, 80px);
     border-radius: 10px;
     object-fit: cover;
 }
@@ -80,17 +92,24 @@ header {
     object-fit: contain;
 }
 
-#Text{
+#Text {
     color: salmon;
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    margin-bottom: 1em;
 }
 
-/* ===== ROULETTE ===== */
+/* ===== WAIFU WHEEL ===== */
+
+/* ===== Salute to this legend doin it https://www.youtube.com/watch?v=mF9yOwlunWk ===== */
 .slider {
     position: relative;
     width: 80%;
+    max-width: 900px;
     height: var(--height);
     overflow: hidden;
     border: 2px solid salmon;
+    border-radius: 1em;
+    margin: 0 auto 2em auto;
 }
 
 .list {
@@ -99,7 +118,6 @@ header {
     width: calc((var(--width) + var(--gap)) * var(--quantity) * 2);
     animation: scroll var(--speed) linear infinite;
 }
-
 
 .slider:hover .list {
     animation-play-state: paused;
@@ -110,7 +128,6 @@ header {
     height: var(--height);
     overflow: hidden;
     border-radius: 10px;
-    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .item img {
@@ -121,7 +138,6 @@ header {
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-
 .slider:hover .item:hover img {
     transform: scale(1.1);
     filter: grayscale(0);
@@ -131,18 +147,10 @@ header {
     filter: grayscale(80%) brightness(0.5);
 }
 
-/* ===== Salute to this legend doin it
-
-https://www.youtube.com/watch?v=mF9yOwlunWk
-
-===== */
-
-
 @keyframes scroll {
     0% {
         transform: translateX(0);
     }
-
     100% {
         transform: translateX(calc((var(--width) + var(--gap)) * var(--quantity) * -1));
     }
@@ -157,7 +165,7 @@ https://www.youtube.com/watch?v=mF9yOwlunWk
     margin: 1.5em auto;
     width: 90%;
     max-width: 1000px;
-    height: 350px;
+    height: clamp(200px, 40vh, 400px);
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
@@ -186,13 +194,14 @@ https://www.youtube.com/watch?v=mF9yOwlunWk
 
 /* ===== FOOTER ===== */
 footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: #fce4ec;
     padding: 1em;
     text-align: center;
     font-weight: bold;
+    border-radius: 0.5em;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 2em;
 }
 
 /* ===== MOBILE VIEW ===== */
@@ -201,7 +210,6 @@ footer {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 1em;
     }
 
     #Contacts nav {
@@ -209,50 +217,13 @@ footer {
         gap: 0.5em;
     }
 
-    .Roullete {
-        height: 250px;
+    .slider {
         width: 95%;
-    }
-
-    .Pics {
-        height: 100%;
-        aspect-ratio: 1 / 1;
+        height: var(--height);
     }
 
     #Slider {
-        height: 250px;
+        height: clamp(200px, 30vh, 300px);
         width: 95%;
-    }
-
-    #Slider figure img {
-        height: 250px;
-    }
-
-    h1, h2 {
-        font-size: 1.3em;
-    }
-}
-
-/* ===== LAPTOP VIEW ===== */
-@media (min-width: 1024px) {
-    header {
-        padding: 1.5em 3em;
-    }
-
-    h1 {
-        font-size: 2em;
-    }
-
-    .Roullete {
-        height: 450px;
-        width: 85%;
-    }
-
-    .Pics {
-        height: 100%;
-    }
-
-    #Slider {
-        height: 400px;
     }
 }
