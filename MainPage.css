@@ -209,6 +209,7 @@ footer {
 }
 
 /* ===== MOBILE VIEW ===== */
+
 @media (max-width: 768px) {
 
     header {
@@ -233,18 +234,31 @@ footer {
         gap: 0.5em;
     }
 
-
     body {
-        padding-top: 150px;
+        padding-top: 140px;
         padding-bottom: 80px;
     }
 
-    .Roullete,
+    .Roullete {
+        width: 80%;
+        max-width: 300px;
+        height: clamp(150px, 28vh, 200px);
+        margin: 1em auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
     .slider,
     #Slider {
         width: 90%;
-        height: clamp(150px, 30vh, 220px);
+        max-width: 350px;
+        height: clamp(140px, 30vh, 200px);
         margin: 1em auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .Pics,
@@ -256,10 +270,10 @@ footer {
         border-radius: 8px;
     }
 
-
     h1,
     h2 {
         font-size: 1.2em;
+        text-align: center;
     }
 
     footer {
