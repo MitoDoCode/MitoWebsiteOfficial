@@ -14,6 +14,7 @@ social list /
 gacha list /
 
 better design on gacha list
+clean up  the code structure(foldered files)
 publicly publish the update
 
 better web design(mobile)
